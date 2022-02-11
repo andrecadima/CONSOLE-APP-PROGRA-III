@@ -1,0 +1,94 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practica_1_ALG_de_Ordenamiento_y_Busque
+{
+    class Person
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese Cantidad de Registros");
+            int length = int.Parse(Console.ReadLine());
+            int[] id = new int[length];
+            string[] name = new string[length];
+            int[] age = new int[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                id[i] = i;
+                Console.WriteLine("Ingrese el nombre del del Registro #" + (i+1));
+                name[i] = Console.ReadLine();
+                Console.WriteLine("Ingrese la edad del del Registro #" + (i+1));
+                age[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("List:");
+
+            for (int i = 0; i < length; i++)
+            {
+                Console.WriteLine(id[i] + " " + name[i].ToString() + " " + age[i]);
+            }
+
+
+            // Minor age: 
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Minor:");
+            string namename = name[0];
+            int minor = age[0];
+            for (int i = 0; i < length; i++)
+            {
+                if (age[i] < minor)
+                {
+                    minor = age[i];
+                    namename = name[i];
+                }
+            }
+            Console.WriteLine("The minor from the array is " + namename + " with " + minor + " years");
+
+
+            //Ordered by Name
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Sorted by name:");
+
+
+            Array.Sort(name);
+
+            for (int i = 0; i < length; i++)
+            {
+                Console.WriteLine(id[i] + " " + name[i].ToString() + " " + age[i]);
+            }
+
+            //Order by Age:
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Sorted by age:");
+
+            Array.Sort(age);
+
+
+            for (int i = 0; i < length; i++)
+            {
+                Console.WriteLine(id[i] + " " + name[i].ToString() + " " + age[i]);
+            }
+
+            Console.ReadKey();
+
+        }
+    }
+
+    
+
+
+
+}
